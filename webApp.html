@@ -19,7 +19,7 @@
     <nav class = "navbar navbar-inverse navbar-fixed-top">
       <div class = "container-fluid">
         <div class = "navbar-header">
-          <a class = "navbar-brand" href = "#"><img src = "logobandw.png" alt = "logo" id="McLogo" class = "img-circle"></a>
+          <a class = "navbar-brand" href = "#"><img src = "./Images/logobandw.png" alt = "logo" id="McLogo" class = "img-circle"></a>
         </div>
         <ul class = "nav navbar-nav">
           <li class = "active"><a href ="#"><h4> Home </h4> </a></li>
@@ -46,19 +46,19 @@
       </ol>
       <div class ="carousel-inner" role = "listbox">
         <div class="item active">
-          <img style = "filter:saturate(70%)"src = "big_macs.jpg" alt = "bigMac">
+          <img style = "filter:saturate(70%)"src = "./Images/big_macs.jpg" alt = "bigMac" class = "sliders">
           <div class = "carousel-caption">
-            <h3></h3>
+            <h3>Made with 100% Canadian beef.</h3>
           </div>
         </div>
         <div class ="item">
-           <img style = "filter:saturate(70%)"src = "fries.jpg" alt = "fries">
+           <img style = "filter:saturate(70%)"src = "./Images/fries.jpg" alt = "fries" class = "sliders">
           <div class = "carousel-caption">
             <h3>We only use the freshest potatoes.</h3>
           </div>
         </div>
         <div class ="item">
-           <img style = "filter:saturate(70%)"src = "coke.jpg" alt = "coke">
+           <img style = "filter:saturate(70%)"src = "./Images/coke.jpg" alt = "coke" class = "sliders">
           <div class = "carousel-caption">
             <h3>Get the coldest drinks!</h3>
           </div>
@@ -74,7 +74,32 @@
       </a>
     </div>
     <div class = "jumbotron text-center">
-      <h1>I'm lovin' it </h1>
+      <h1>I'm Mclovin' it </h1>
+    </div>
+    <div class = "container">
+      <h3 class = "text-center">Contact</h3>
+      <p class = "text-center"><em>We love hearing from customers!</em></p>
+      <div class = "row test">
+        <div class = "col-md-4">
+          <p>Send us questions or suggestions.</p>
+        </div>
+        <div class = "col-md-8">
+          <div class = "row">
+            <div class = "col-sm-6 form-group">
+              <input class="form-control" id = "name" name ="name" placeholder="Name" type ="text" required="required">
+            </div>
+            <div class = "col-sm-6 form-group">
+              <input class = "form-control" id="email" name="email" placeholder="Email" type="email" required="required">
+            </div>
+            <textarea class = "form-control" id ="comments" name="comments" placeholder="Question or Comment" rows = "5"></textarea>
+            <div class = "row">
+              <div class ="col-md-12 form-group">
+                <button class ="btn pull-right" type ="submit">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

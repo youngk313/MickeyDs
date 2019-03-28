@@ -4,7 +4,6 @@
 
 .dropdown-menu{
   background-color: #333333;
-
 }
 
 .dropdown-menu li a{
@@ -13,4 +12,13 @@
 
 .jumbotron{
   background-color: #FFFFFF;
+}
+
+.sliders{
+
+}
+
+button{
+  background-color: #000000;
+  color:#FFFFFF;
 }
