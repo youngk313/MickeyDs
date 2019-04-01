@@ -2,7 +2,7 @@
 
 
 // REQUIRES
-const lists = require('./core/data');
+const lists = require('./data');
 const express = require('express');
 // as of Express 4, you need this:
 // https://www.npmjs.com/package/body-parser
@@ -12,17 +12,33 @@ const app = express();
 const { JSDOM } = require('jsdom');
 const fs = require("fs");
 
+function showNutritionFacts(str){
+    var xhttp;
+    if (str == "") {
+        document.getElementById("FoodFacts").innerHTML = "";
+        return;
+    }
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("FoodFacts").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "getfoodfact.asp?q=" + str, true);
+    xhttp.send();
+}
+
 app.get('/', function (req, res) {
-    let doc = fs.readFileSync('./static/html/index.html', "utf8");
-    //console.log(JSDOM);
+    let doc = fs.readFileSync('./webApp.html', "utf8");
     //let dom = new JSDOM(doc);
     //let $ = require("jquery")(dom.window);
     //res.send(dom.serialize());
     res.send(doc);
 });
 
-app.use('/js', express.static('static/js'))
-app.use('/css', express.static('static/css'))
+app.use('/js', express.static('./js'))
+app.use('/images', express.static('./images'))
+app.use('/css', express.static('./css'))
 
 app.get('/ajax-GET', function (req, res) {
 
@@ -42,20 +58,33 @@ app.get('/ajax-GET-list', function (req, res) {
     let formatOfResponse = req.query['format'];
     let dataList = null;
 
-    if(formatOfResponse == 'html-list') {
+    if(formatOfResponse == 'burger-list') {
 
         res.setHeader('Content-Type', 'text/html');
-           res.setHeader('X-Powered-By','Young');
-        dataList = lists.getHTML();
+        res.setHeader('X-Powered-By','McDonalds');
+        dataList = lists.getburgers();
         res.send(dataList);
 
-    } else if(formatOfResponse == 'json-list') {
+    } else if(formatOfResponse == 'drink-list') {
+
+        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('X-Powered-By','McDonalds');
+        dataList = lists.getdrinks();
+        res.send(dataList);
+
+    } else if(formatOfResponse == 'burger-facts') {
 
         res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getJSON();
+        dataList = lists.getburgfacts();
         res.send(dataList);
 
-    } else {
+    } else if(formatOfResponse == 'drink-facts') {
+
+        res.setHeader('Content-Type', 'application/json');
+        dataList = lists.getdrinkfacts();
+        res.send(dataList);
+
+    }else {
         res.send({msg: 'Wrong format!'});
     }
 });
@@ -86,3 +115,6 @@ let port = 8000;
 app.listen(port, function () {
     console.log('Example app listening on port ' + port + '!');
 });
+
+// as of Express 4, you need this:
+// https://www.npmjs.com/package/body-parser
