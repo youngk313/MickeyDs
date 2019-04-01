@@ -17,7 +17,31 @@ let drinkData = ["Amount Per Serving: Large",
                 "Total Carbohydrates: 100 g",
                 "Sugars: 100 g"
                 ]
+
+let breakfast = "<ul><li>Bacon n' Egg McMuffin</li><li>Breakfast Burrito</li><li>Egg BLT McMuffin</li><li>Sausage McGriddles</li></ul>";
+
+let breakyData = ["Amount Per Serving: 124 g",
+                  "Calories: 310",
+                  "Fat: 14 g",
+                  "Sodium: 680 mg",
+                  "Carbohydrates: 28 g",
+                  "Protein: 16 g",
+                  "Cholesterol: 200 g"
+                  ]
+
 module.exports = {
+  getbreakfasts: function () {
+    console.log("called: getbreakfasts");
+
+    return breakfast;
+  },
+
+  getbreakyfacts : function () {
+    console.log("called: getbreakyfacts");
+
+    return breakyData;
+  },
+
   getburgers: function () {
       console.log("called: getburgers");
       // Note: this could be from a DB, for now it's just hard-coded

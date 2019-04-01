@@ -72,6 +72,13 @@ app.get('/ajax-GET-list', function (req, res) {
         dataList = lists.getdrinks();
         res.send(dataList);
 
+    } else if(formatOfResponse == 'breaky-list') {
+
+        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('X-Powered-By','McDonalds');
+        dataList = lists.getbreakfasts();
+        res.send(dataList);
+
     } else if(formatOfResponse == 'burger-facts') {
 
         res.setHeader('Content-Type', 'application/json');
@@ -84,7 +91,13 @@ app.get('/ajax-GET-list', function (req, res) {
         dataList = lists.getdrinkfacts();
         res.send(dataList);
 
-    }else {
+    } else if(formatOfResponse == 'breaky-facts') {
+
+        res.setHeader('Content-Type', 'application/json');
+        dataList = lists.getbreakyfacts();
+        res.send(dataList);
+
+    } else {
         res.send({msg: 'Wrong format!'});
     }
 });
