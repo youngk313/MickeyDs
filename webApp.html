@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="./css/stylish.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -37,7 +36,6 @@
         </div>
 
         <ul class = "nav navbar-nav text-center">
-          <li class = "active"><a href ="#"><h4> Home </h4> </a></li>
           <li class = "dropdown">
             <a class = "dropdown-toggle" data-toggle = "dropdown" href="#"><h4>Menu</h4><span class ="caret"></span></a>
             <ul class = "dropdown-menu">
@@ -56,7 +54,7 @@
               <li><a href = "#Burnaby">Burnaby</a></li>
               <li><a href = "#Richmond">Richmond</a></li>
             </ul>
-          <li><a href="#Contact"> <h4> Contact </h4></a></li>
+          <li class = "active"><a href="#Contact"> <h4> Contact </h4></a></li>
         </ul>
       </div>
     </nav>
@@ -108,6 +106,8 @@
       <div class ="row">
         <div id = "Breakfast" class = "col-sm-4">
           <h4>Breakfast</h4>
+          <p id = "breakylist" class = "submenu"> </p>
+          <p id = "breakfacts" class = "submenu"></p>
           <img src = "./images/mcmuffin.jpg" alt ="mcgriddle" class = "thumbnails">
         </div>
 
@@ -134,6 +134,8 @@
 
         <div id ="Salads" class = "col-sm-4">
           <h4>Salads</h4>
+          <p id = "saladlist" class = "submenu">  </p>
+          <p id = "saladfacts" class = "submenu">  </p>
           <img src = "./images/salad.png" alt ="salad" class = "thumbnails">
         </div>
 
@@ -216,9 +218,6 @@
       <p>McDonalds &copy</p>
       <br/>
     </footer>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
 
     <script src = "./js/client-side.js">
     </script>
