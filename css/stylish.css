@@ -37,6 +37,8 @@
 .submenu ul {
   list-style-type: none;
   text-align: center;
+  padding-right: 34px;
+  font-weight: bold;
 }
 
 .sliders{
