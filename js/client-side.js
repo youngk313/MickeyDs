@@ -203,5 +203,157 @@ $('#Menu #Drinks').click(function(e) {
             }
         });
     });
+		$('#Menu #Desserts').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "dessert-facts"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#dessfacts");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#dessfacts").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+		
+		$('#Menu #Desserts').click(function(e) {
+
+        // don't allow the anchor to visit the link
+       // e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "dessert-list"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#desslist").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#desslist").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+	$('#Menu #SandS').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "side-facts"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#sidefacts");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#sidefacts").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+		
+		$('#Menu #SandS').click(function(e) {
+
+        // don't allow the anchor to visit the link
+       // e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "side-list"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#sidelist").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#sidelist").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+	$('#Menu #Salads').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "salad-facts"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#saladfacts");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#saladfacts").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+		
+		$('#Menu #Salads').click(function(e) {
+
+        // don't allow the anchor to visit the link
+       // e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "salad-list"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#saladlist").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#saladlist").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+
+		
 
 });

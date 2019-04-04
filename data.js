@@ -6,8 +6,7 @@ let burgData = ["Amount Per: 100 grams",
                 "Sodium: 460 mg",
                 "Total Carbohydrate: 20 g",
                 "Protein: 12 g",
-                "Cholesterol 36 mg",
-                "Potassium: 181 mg"]
+                "Cholesterol 36 mg"]
 
 let drinks = "<ul><li>Coca-Cola</li><li>Milkshakes</li><li>Sprite</li><li>Minute Maid</li></ul>";
 
@@ -29,7 +28,74 @@ let breakyData = ["Amount Per Serving: 124 g",
                   "Cholesterol: 200 g"
                   ]
 
+let desserts = "<ul><li>Oreo McFlurry</li><li>Vanilla Cone</li><li>Hot Fudge Sundae</li><li>Triple Thick Milkhake</li></ul>";
+
+let dessertsData = ["Amount Per Serving: 286 g",
+                  "Calories: 570",
+                  "Fat: 29 g",
+                  "Sodium: 410 mg",
+                  "Carbohydrates: 90 g",
+                  "Protein: 11 g",
+                  "Cholesterol: 40 mg"
+                  ]
+let sides = "<ul><li>French fries</li><li>Poutine</li><li>Snack Wraps</li><li>Blueberry Muffin</li></ul>";
+
+let sidesData = ["Amount Per Serving: 110 g",
+                  "Calories: 350 cal",
+                  "Fat: 17g",
+                  "Sodium: 260 mg",
+                  "Carbohydrates: 46 g",
+                  "Protein: 4 g",
+                  "Cholesterol: 0 mg"
+                  ]
+let salad = "<ul><li>Caesar Salad</li><li>Garden Fresh Salad</li><li>Im Greek-ing out salad with grilled chicken</li></ul>";
+
+let saladData = ["Amount Per Serving: 85 g",
+                  "Calories: 150 cal",
+                  "Fat: 8g",
+                  "Sodium: 400 mg",
+                  "Carbohydrates: 12 g",
+                  "Protein: 6 g",
+                  "Cholesterol: 25 mg"
+                  ]
+
+
 module.exports = {
+	
+	  getSalads: function () {
+    console.log("called: saladlist");
+
+    return salad;
+  },
+
+  getSaladfacts : function () {
+    console.log("called: saladfacts");
+
+    return saladData;
+  },
+	
+	getDesserts: function () {
+    console.log("called: dessertlist");
+
+    return desserts;
+  },
+
+  getDessertfacts : function () {
+    console.log("called: dessertfacts");
+
+    return dessertsData;
+  },
+	getSides: function () {
+    console.log("called: sidelist");
+
+    return sides;
+  },
+
+  getSidefacts : function () {
+    console.log("called: sidefacts");
+
+    return sidesData;
+  },
   getbreakfasts: function () {
     console.log("called: getbreakfasts");
 
